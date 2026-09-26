@@ -1,1 +1,400 @@
-Página web de la Talaya
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f7f8f3">
+	<meta name="description" content="Perfil profesional de una comunicadora audiovisual y analista de datos, enfocada en transformar información en historias claras y atractivas.">
+	<title>Comunicadora Audiovisual · Analista de Datos</title>
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #f7f8f3;
+			--ink: #202b29;
+			--muted: #64716d;
+			--line: #dce3dc;
+			--sage: #dce9dc;
+			--sage-deep: #526c5d;
+			--coral: #f1d3c8;
+			--white: #fffefa;
+			font-family: "Aptos", "Segoe UI", sans-serif;
+			font-synthesis: none;
+			text-rendering: optimizeLegibility;
+		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			min-width: 320px;
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+		}
+
+		a { color: inherit; }
+
+		.page {
+			width: min(1120px, calc(100% - 64px));
+			margin: 0 auto;
+		}
+
+		.topbar {
+			min-height: 82px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.monogram {
+			display: inline-grid;
+			width: 38px;
+			aspect-ratio: 1;
+			place-items: center;
+			border: 1px solid var(--sage-deep);
+			border-radius: 50%;
+			color: var(--sage-deep);
+			font-family: Georgia, serif;
+			font-size: 17px;
+		}
+
+		.nav {
+			display: flex;
+			gap: 30px;
+			color: var(--muted);
+			font-size: 13px;
+		}
+
+		.nav a { text-decoration: none; }
+		.nav a:hover, .nav a:focus-visible { color: var(--ink); }
+
+		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+			align-items: center;
+			gap: clamp(36px, 8vw, 112px);
+			padding: clamp(72px, 11vw, 132px) 0 108px;
+		}
+
+		.eyebrow, .section-label {
+			margin: 0 0 20px;
+			color: var(--sage-deep);
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: .13em;
+			text-transform: uppercase;
+		}
+
+		h1, h2, p { margin-top: 0; }
+
+		h1 {
+			max-width: 650px;
+			margin-bottom: 24px;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: clamp(44px, 6.4vw, 76px);
+			font-weight: 400;
+			line-height: 1.04;
+		}
+
+		h1 span { color: var(--sage-deep); }
+
+		.intro {
+			max-width: 540px;
+			margin-bottom: 32px;
+			color: var(--muted);
+			font-size: 17px;
+			line-height: 1.75;
+		}
+
+		.text-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 12px;
+			padding-bottom: 7px;
+			border-bottom: 1px solid var(--sage-deep);
+			color: var(--ink);
+			font-size: 14px;
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.text-link span { color: var(--sage-deep); font-size: 18px; }
+
+		.visual {
+			position: relative;
+			display: grid;
+			min-height: 330px;
+			place-items: center;
+			overflow: hidden;
+			background: var(--sage);
+		}
+
+		.visual::before {
+			position: absolute;
+			top: -72px;
+			right: -58px;
+			width: 210px;
+			aspect-ratio: 1;
+			border: 1px solid rgba(82, 108, 93, .22);
+			border-radius: 50%;
+			content: "";
+		}
+
+		.visual::after {
+			position: absolute;
+			bottom: -90px;
+			left: -68px;
+			width: 210px;
+			aspect-ratio: 1;
+			border: 1px solid rgba(82, 108, 93, .22);
+			border-radius: 50%;
+			content: "";
+		}
+
+		.visual-note {
+			position: absolute;
+			z-index: 1;
+			top: 24px;
+			left: 25px;
+			color: var(--sage-deep);
+			font-size: 10px;
+			font-weight: 700;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+		}
+
+		.signal {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			width: min(230px, 70%);
+			height: 174px;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			border: 1px solid rgba(82, 108, 93, .45);
+			background: rgba(255, 254, 250, .7);
+		}
+
+		.signal::before, .signal::after {
+			position: absolute;
+			left: 13px;
+			width: 7px;
+			height: 7px;
+			border: 1px solid var(--sage-deep);
+			border-radius: 50%;
+			content: "";
+		}
+
+		.signal::before { top: 13px; }
+		.signal::after { bottom: 13px; }
+
+		.bar {
+			width: 9px;
+			height: var(--height);
+			border-radius: 5px;
+			background: var(--sage-deep);
+			transform-origin: center;
+			animation: settle .75s ease-out both;
+			animation-delay: var(--delay);
+		}
+
+		.bar:nth-child(3n) { background: #bd8673; }
+
+		.caption {
+			position: absolute;
+			z-index: 1;
+			right: 24px;
+			bottom: 22px;
+			color: var(--sage-deep);
+			font-family: Georgia, serif;
+			font-size: 14px;
+			font-style: italic;
+		}
+
+		.profile {
+			display: grid;
+			grid-template-columns: .72fr 1.28fr;
+			gap: 52px;
+			padding: 34px 0 88px;
+			border-top: 1px solid var(--line);
+		}
+
+		.profile h2 {
+			margin-bottom: 0;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 32px;
+			font-weight: 400;
+		}
+
+		.profile-copy {
+			max-width: 660px;
+			color: var(--muted);
+			font-size: 15px;
+			line-height: 1.8;
+		}
+
+		.profile-copy p:last-child { margin-bottom: 0; }
+
+		.focus {
+			padding: 58px 0 64px;
+			background: var(--white);
+		}
+
+		.focus-inner { width: min(1120px, calc(100% - 64px)); margin: 0 auto; }
+
+		.focus h2 {
+			margin-bottom: 32px;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 36px;
+			font-weight: 400;
+		}
+
+		.focus-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			border-top: 1px solid var(--line);
+		}
+
+		.focus-item {
+			min-height: 130px;
+			padding: 23px 24px 0 0;
+		}
+
+		.focus-item + .focus-item {
+			padding-left: 24px;
+			border-left: 1px solid var(--line);
+		}
+
+		.focus-item h3 {
+			margin: 0 0 10px;
+			font-size: 15px;
+			font-weight: 650;
+		}
+
+		.focus-item p {
+			max-width: 280px;
+			margin-bottom: 0;
+			color: var(--muted);
+			font-size: 13px;
+			line-height: 1.65;
+		}
+
+		footer {
+			display: flex;
+			min-height: 78px;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			color: var(--muted);
+			font-size: 12px;
+		}
+
+		@keyframes settle {
+			from { opacity: .25; transform: scaleY(.35); }
+			to { opacity: 1; transform: scaleY(1); }
+		}
+
+		@media (max-width: 720px) {
+			.page, .focus-inner { width: min(100% - 40px, 540px); }
+			.topbar { min-height: 70px; }
+			.nav { gap: 18px; font-size: 12px; }
+			.hero { grid-template-columns: 1fr; gap: 44px; padding: 76px 0 72px; }
+			.visual { min-height: 280px; }
+			.profile { grid-template-columns: 1fr; gap: 24px; padding: 30px 0 66px; }
+			.focus-grid { grid-template-columns: 1fr; }
+			.focus-item, .focus-item + .focus-item { min-height: 0; padding: 20px 0; border-left: 0; }
+			.focus-item + .focus-item { border-top: 1px solid var(--line); }
+			.focus { padding: 48px 0; }
+			footer { min-height: 72px; }
+		}
+
+		@media (max-width: 420px) {
+			.nav { gap: 12px; }
+			.nav a { font-size: 11px; }
+			footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: 6px; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+		}
+	</style>
+</head>
+<body>
+	<header class="page topbar">
+		<a class="monogram" href="#inicio" aria-label="Inicio">C</a>
+		<nav class="nav" aria-label="Navegación principal">
+			<a href="#perfil">Perfil</a>
+			<a href="#enfoque">Enfoque</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="page hero" id="inicio" aria-labelledby="titulo">
+			<div>
+				<p class="eyebrow">Comunicación · Narrativa · Datos</p>
+				<h1 id="titulo">Ideas que conectan. <span>Datos que cuentan.</span></h1>
+				<p class="intro">Soy comunicadora audiovisual y analista de datos. Combino narrativa visual y pensamiento analítico para transformar información compleja en historias claras, relevantes y fáciles de recordar.</p>
+				<a class="text-link" href="#perfil">Conoce mi perfil <span aria-hidden="true">↘</span></a>
+			</div>
+
+			<div class="visual" role="img" aria-label="Composición abstracta que representa una señal audiovisual convertida en datos">
+				<span class="visual-note">Mirada en dos lenguajes</span>
+				<div class="signal" aria-hidden="true">
+					<i class="bar" style="--height: 30px; --delay: 40ms"></i>
+					<i class="bar" style="--height: 58px; --delay: 90ms"></i>
+					<i class="bar" style="--height: 42px; --delay: 140ms"></i>
+					<i class="bar" style="--height: 86px; --delay: 190ms"></i>
+					<i class="bar" style="--height: 54px; --delay: 240ms"></i>
+					<i class="bar" style="--height: 108px; --delay: 290ms"></i>
+					<i class="bar" style="--height: 66px; --delay: 340ms"></i>
+					<i class="bar" style="--height: 38px; --delay: 390ms"></i>
+					<i class="bar" style="--height: 76px; --delay: 440ms"></i>
+					<i class="bar" style="--height: 48px; --delay: 490ms"></i>
+				</div>
+				<span class="caption">De la señal al significado</span>
+			</div>
+		</section>
+
+		<section class="page profile" id="perfil" aria-labelledby="perfil-titulo">
+			<div>
+				<p class="section-label">Sobre mí</p>
+				<h2 id="perfil-titulo">Una perspectiva híbrida</h2>
+			</div>
+			<div class="profile-copy">
+				<p>Mi perfil reúne dos formas complementarias de observar el mundo: la sensibilidad audiovisual para construir mensajes y la analítica para encontrar patrones, contexto y dirección.</p>
+				<p>Me interesa trabajar en proyectos donde la comunicación y la evidencia se encuentren: desde desarrollar conceptos y contenidos visuales hasta explorar datos y comunicar sus hallazgos con claridad.</p>
+			</div>
+		</section>
+
+		<section class="focus" id="enfoque" aria-labelledby="enfoque-titulo">
+			<div class="focus-inner">
+				<p class="section-label">Lo que aporto</p>
+				<h2 id="enfoque-titulo">Un enfoque, tres perspectivas</h2>
+				<div class="focus-grid">
+					<article class="focus-item">
+						<h3>Narrativa audiovisual</h3>
+						<p>Ideas y mensajes que encuentran su forma en imágenes, sonido y ritmo.</p>
+					</article>
+					<article class="focus-item">
+						<h3>Análisis de datos</h3>
+						<p>Lectura rigurosa de la información para revelar patrones y oportunidades.</p>
+					</article>
+					<article class="focus-item">
+						<h3>Comunicación estratégica</h3>
+						<p>Hallazgos traducidos en mensajes comprensibles, útiles y memorables.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="page">
+		<span>Comunicación audiovisual + análisis de datos</span>
+		<span>Perfil profesional</span>
+	</footer>
+</body>
+</html>
