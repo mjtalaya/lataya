@@ -3,20 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#f7f8f3">
-	<meta name="description" content="Perfil profesional de una comunicadora audiovisual y analista de datos, enfocada en transformar información en historias claras y atractivas.">
-	<title>Comunicadora Audiovisual · Analista de Datos</title>
+	<meta name="theme-color" content="#fbf8ef">
+	<meta name="description" content="LATAYA, el espacio de María José: comunicación audiovisual, datos, inteligencia artificial y un poco de caos.">
+	<title>LATAYA — María José</title>
 	<style>
 		:root {
 			color-scheme: light;
-			--paper: #f7f8f3;
-			--ink: #202b29;
-			--muted: #64716d;
-			--line: #dce3dc;
-			--sage: #dce9dc;
-			--sage-deep: #526c5d;
-			--coral: #f1d3c8;
-			--coral-deep: #a66552;
+			--paper: #fbf8ef;
+			--ink: #1b2823;
+			--muted: #53635c;
+			--line: #d8dfd2;
+			--sage: #e1edb4;
+			--sage-deep: #344f43;
+			--coral: #f2aa8d;
+			--coral-deep: #874e3e;
 			--white: #fffefa;
 			font-family: "Aptos", "Segoe UI", sans-serif;
 			font-synthesis: none;
@@ -28,7 +28,7 @@
 		html { scroll-behavior: smooth; }
 
 		body {
-			min-width: 320px;
+			min-width: 0;
 			margin: 0;
 			background: var(--paper);
 			color: var(--ink);
@@ -50,15 +50,12 @@
 		}
 
 		.monogram {
-			display: inline-grid;
-			width: 38px;
-			aspect-ratio: 1;
-			place-items: center;
-			border: 1px solid var(--sage-deep);
-			border-radius: 50%;
-			color: var(--sage-deep);
-			font-family: Georgia, serif;
-			font-size: 17px;
+			display: inline-block;
+			color: var(--ink);
+			font-family: Impact, "Arial Black", sans-serif;
+			font-size: 22px;
+			font-weight: 900;
+			text-decoration: none;
 		}
 
 		.nav {
@@ -73,10 +70,10 @@
 
 		.hero {
 			display: grid;
-			grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+			grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
 			align-items: center;
-			gap: 72px;
-			padding: 96px 0 102px;
+			gap: 48px;
+			padding: 76px 0 88px;
 		}
 
 		.eyebrow, .section-label {
@@ -84,7 +81,7 @@
 			color: var(--sage-deep);
 			font-size: 11px;
 			font-weight: 700;
-			letter-spacing: .13em;
+			letter-spacing: 0;
 			text-transform: uppercase;
 		}
 
@@ -99,15 +96,23 @@
 		h1, h2, p { margin-top: 0; }
 
 		h1 {
-			max-width: 650px;
-			margin-bottom: 28px;
-			font-family: Georgia, "Times New Roman", serif;
-			font-size: 72px;
-			font-weight: 400;
-			line-height: 1;
+			max-width: none;
+			margin-bottom: 8px;
+			font-family: Impact, "Arial Black", sans-serif;
+			font-size: 142px;
+			font-weight: 900;
+			line-height: .88;
 		}
 
 		h1 span { display: block; color: var(--sage-deep); }
+
+		.hero-prompt {
+			margin: 0 0 22px;
+			color: var(--coral-deep);
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 25px;
+			font-style: italic;
+		}
 
 		.intro {
 			max-width: 540px;
@@ -133,6 +138,42 @@
 		.text-link:hover { background: var(--ink); transform: translateY(-2px); }
 		.text-link:focus-visible { outline: 3px solid var(--coral-deep); outline-offset: 3px; }
 		.text-link span { color: var(--coral); font-size: 18px; }
+
+		.python-note {
+			display: flex;
+			width: fit-content;
+			align-items: center;
+			gap: 10px;
+			margin-top: 24px;
+			padding: 0;
+			border: 0;
+			background: transparent;
+			color: var(--muted);
+			font: inherit;
+			font-size: 12px;
+			text-align: left;
+			cursor: pointer;
+		}
+
+		.python-note::before {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--coral-deep);
+			content: "";
+		}
+
+		.python-note:hover { color: var(--ink); }
+		.python-note:focus-visible { outline: 2px solid var(--coral-deep); outline-offset: 5px; }
+		.python-note span { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+		.python-status {
+			display: block;
+			max-width: 360px;
+			margin-top: 10px;
+			color: var(--coral-deep);
+			font-size: 12px;
+		}
+		.python-status[hidden] { display: none; }
 
 		.visual {
 			position: relative;
@@ -178,7 +219,7 @@
 			color: var(--sage-deep);
 			font-size: 10px;
 			font-weight: 700;
-			letter-spacing: .12em;
+			letter-spacing: 0;
 			text-transform: uppercase;
 		}
 
@@ -238,15 +279,16 @@
 			display: grid;
 			grid-template-columns: .72fr 1.28fr;
 			gap: 52px;
-			padding: 34px 0 88px;
+			padding: 42px 0 92px;
 			border-top: 1px solid var(--line);
 		}
 
 		.profile h2 {
 			margin-bottom: 0;
 			font-family: Georgia, "Times New Roman", serif;
-			font-size: 32px;
+			font-size: 42px;
 			font-weight: 400;
+			line-height: 1.1;
 		}
 
 		.profile-copy {
@@ -257,10 +299,12 @@
 		}
 
 		.profile-copy p:last-child { margin-bottom: 0; }
+		.profile-copy strong { color: var(--ink); }
+		.opportunities { padding-top: 12px; border-top: 1px solid var(--line); }
 
 		.focus {
-			padding: 58px 0 64px;
-			background: var(--white);
+			padding: 62px 0 72px;
+			background: var(--sage);
 		}
 
 		.focus-inner { width: min(1120px, calc(100% - 64px)); margin: 0 auto; }
@@ -268,24 +312,32 @@
 		.focus h2 {
 			margin-bottom: 32px;
 			font-family: Georgia, "Times New Roman", serif;
-			font-size: 36px;
+			font-size: 44px;
 			font-weight: 400;
 		}
 
 		.focus-grid {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			border-top: 1px solid var(--line);
+			grid-template-columns: repeat(5, 1fr);
+			border-top: 1px solid rgba(27, 40, 35, .24);
 		}
 
 		.focus-item {
-			min-height: 130px;
-			padding: 23px 24px 0 0;
+			min-height: 158px;
+			padding: 18px 18px 0 0;
 		}
 
 		.focus-item + .focus-item {
-			padding-left: 24px;
-			border-left: 1px solid var(--line);
+			padding-left: 18px;
+			border-left: 1px solid rgba(27, 40, 35, .24);
+		}
+
+		.focus-item .item-number {
+			display: block;
+			margin-bottom: 28px;
+			color: var(--coral-deep);
+			font-size: 11px;
+			font-weight: 700;
 		}
 
 		.focus-item h3 {
@@ -295,12 +347,146 @@
 		}
 
 		.focus-item p {
-			max-width: 280px;
+			max-width: 220px;
 			margin-bottom: 0;
 			color: var(--muted);
 			font-size: 13px;
 			line-height: 1.65;
 		}
+
+		.process {
+			padding: 80px 0 88px;
+		}
+
+		.process-heading {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			gap: 32px;
+			margin-bottom: 32px;
+		}
+
+		.process h2, .contact h2 {
+			max-width: 620px;
+			margin-bottom: 0;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 48px;
+			font-weight: 400;
+			line-height: 1.08;
+		}
+
+		.process-aside {
+			max-width: 270px;
+			margin-bottom: 4px;
+			color: var(--muted);
+			font-size: 13px;
+			line-height: 1.6;
+		}
+
+		.process-board {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1px;
+			border: 1px solid var(--line);
+			background: var(--line);
+		}
+
+		.process-cell {
+			min-height: 155px;
+			padding: 22px;
+			background: var(--white);
+		}
+
+		.process-cell:first-child { background: var(--coral); }
+
+		.process-cell span {
+			display: block;
+			margin-bottom: 28px;
+			color: var(--muted);
+			font-size: 10px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		.process-cell p {
+			margin-bottom: 0;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 20px;
+			line-height: 1.35;
+		}
+
+		.tools-block {
+			display: grid;
+			grid-template-columns: .85fr 1.15fr;
+			gap: 32px;
+			margin-top: 42px;
+			padding-top: 26px;
+			border-top: 1px solid var(--line);
+		}
+
+		.tools-block h3 {
+			margin: 0 0 10px;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 24px;
+			font-weight: 400;
+		}
+
+		.tools-block p {
+			max-width: 440px;
+			margin-bottom: 0;
+			color: var(--muted);
+			font-size: 13px;
+			line-height: 1.65;
+		}
+
+		.tools-fields {
+			padding: 16px 18px;
+			border-left: 3px solid var(--coral);
+			background: var(--white);
+			font-size: 13px;
+			line-height: 1.8;
+		}
+
+		.tools-fields p + p { margin-top: 7px; }
+		.tools-fields strong { color: var(--ink); }
+
+		.contact {
+			padding: 68px 0 72px;
+			background: var(--ink);
+			color: var(--paper);
+		}
+
+		.contact-inner {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: end;
+			gap: 40px;
+		}
+
+		.contact .section-label { color: var(--sage); }
+		.contact h2 { font-size: 54px; }
+
+		.contact-copy {
+			max-width: 410px;
+			margin: 0 0 18px;
+			color: #d8dfd2;
+			font-size: 14px;
+			line-height: 1.7;
+		}
+
+		.contact-link {
+			display: inline-block;
+			padding-bottom: 5px;
+			border-bottom: 1px solid var(--coral);
+			color: var(--coral);
+			font-size: 14px;
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		.contact-link + .contact-link { margin-left: 22px; }
+
+		.contact-link:focus-visible { outline: 2px solid var(--paper); outline-offset: 5px; }
 
 		footer {
 			display: flex;
@@ -317,30 +503,45 @@
 			to { opacity: 1; transform: scaleY(1); }
 		}
 
+		@media (max-width: 820px) {
+			h1 { font-size: 104px; }
+		}
+
 		@media (max-width: 720px) {
 			.page, .focus-inner { width: min(100% - 40px, 540px); }
 			.topbar { min-height: 70px; }
 			.nav { gap: 18px; font-size: 12px; }
-			.hero { grid-template-columns: 1fr; gap: 44px; padding: 70px 0 72px; }
-			h1 { font-size: 58px; }
+			.hero { grid-template-columns: 1fr; gap: 34px; padding: 68px 0 72px; }
+			h1 { font-size: 112px; }
 			.visual { min-height: 340px; }
 			.visual::before { bottom: 38px; left: 24px; width: 140px; height: 140px; }
 			.visual::after { top: 45px; right: 12px; font-size: 120px; }
 			.profile { grid-template-columns: 1fr; gap: 24px; padding: 30px 0 66px; }
-			.focus-grid { grid-template-columns: 1fr; }
-			.focus-item, .focus-item + .focus-item { min-height: 0; padding: 20px 0; border-left: 0; }
-			.focus-item + .focus-item { border-top: 1px solid var(--line); }
+			.focus-grid { grid-template-columns: repeat(2, 1fr); }
+			.focus-item, .focus-item + .focus-item { min-height: 145px; padding: 18px 14px 18px 0; border-left: 0; }
+			.focus-item:nth-child(even) { padding-left: 14px; border-left: 1px solid rgba(27, 40, 35, .24); }
+			.focus-item:nth-child(n + 3) { border-top: 1px solid rgba(27, 40, 35, .24); }
 			.focus { padding: 48px 0; }
+			.process { padding: 58px 0; }
+			.process-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
+			.process h2, .contact h2 { font-size: 40px; }
+			.tools-block { grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
+			.contact-inner { grid-template-columns: 1fr; gap: 30px; }
+			.contact { padding: 54px 0; }
+			.contact-link + .contact-link { margin: 16px 0 0; }
 			footer { min-height: 72px; }
 		}
 
 		@media (max-width: 420px) {
 			.nav { gap: 12px; }
 			.nav a { font-size: 11px; }
-			h1 { font-size: 48px; }
+			h1 { font-size: 76px; }
 			.visual { min-height: 300px; }
 			.visual-note { top: 18px; left: 18px; font-size: 9px; }
 			.caption { right: 14px; bottom: 14px; font-size: 12px; }
+			.focus h2 { font-size: 36px; }
+			.process-board { grid-template-columns: 1fr; }
+			.process-cell { min-height: 130px; }
 			footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: 6px; }
 		}
 
@@ -352,24 +553,29 @@
 </head>
 <body>
 	<header class="page topbar">
-		<a class="monogram" href="#inicio" aria-label="Inicio">C</a>
+		<a class="monogram" href="#inicio" aria-label="LATAYA, inicio">LATAYA</a>
 		<nav class="nav" aria-label="Navegación principal">
-			<a href="#perfil">Perfil</a>
-			<a href="#enfoque">Enfoque</a>
+			<a href="#perfil">¿Quién?</a>
+			<a href="#enfoque">Intereses</a>
+			<a href="#proceso">Proceso</a>
+			<a href="#contacto">Contacto</a>
 		</nav>
 	</header>
 
 	<main>
 		<section class="page hero" id="inicio" aria-labelledby="titulo">
 			<div>
-				<p class="eyebrow">Comunicación · Narrativa · Datos</p>
-				<h1 id="titulo">Ideas que conectan. <span>Datos que cuentan.</span></h1>
-				<p class="intro">Soy comunicadora audiovisual y analista de datos. Combino narrativa visual y pensamiento analítico para transformar información compleja en historias claras, relevantes y fáciles de recordar.</p>
-				<a class="text-link" href="#perfil">Conoce mi perfil <span aria-hidden="true">↘</span></a>
+				<p class="eyebrow">Creatividad · Comunicación · Datos · IA</p>
+				<h1 id="titulo">LATAYA</h1>
+				<p class="hero-prompt">¿Quién es LATAYA?</p>
+				<p class="intro"><strong>María José</strong>, de contar historias a intentar entender los datos. Comunicación Audiovisual primero; Data Science, Big Data e Inteligencia Artificial, ahora. El mapa sigue en construcción. Las ganas de aprender, no.</p>
+				<a class="text-link" href="#perfil">Conoce a la persona detrás <span aria-hidden="true">↘</span></a>
+				<button class="python-note" type="button" id="python-toggle" aria-controls="python-status" aria-expanded="false">Una nota desde la terminal <span aria-hidden="true">↗</span></button>
+				<span class="python-status" id="python-status" aria-live="polite" hidden></span>
 			</div>
 
-			<div class="visual" role="img" aria-label="Composición abstracta que representa una señal audiovisual convertida en datos">
-				<span class="visual-note">Mirada en dos lenguajes</span>
+			<div class="visual" role="img" aria-label="Barras de datos y señal audiovisual en una composición gráfica">
+				<span class="visual-note">Comunicación // datos</span>
 				<div class="signal" aria-hidden="true">
 					<i class="bar" style="--height: 30px; --delay: 40ms"></i>
 					<i class="bar" style="--height: 58px; --delay: 90ms"></i>
@@ -388,40 +594,117 @@
 
 		<section class="page profile" id="perfil" aria-labelledby="perfil-titulo">
 			<div>
-				<p class="section-label">Sobre mí</p>
-				<h2 id="perfil-titulo">Una perspectiva híbrida</h2>
+				<p class="section-label">01 / La persona detrás de la marca</p>
+				<h2 id="perfil-titulo">Ah, es María José.</h2>
 			</div>
 			<div class="profile-copy">
-				<p>Mi perfil reúne dos formas complementarias de observar el mundo: la sensibilidad audiovisual para construir mensajes y la analítica para encontrar patrones, contexto y dirección.</p>
-				<p>Me interesa trabajar en proyectos donde la comunicación y la evidencia se encuentren: desde desarrollar conceptos y contenidos visuales hasta explorar datos y comunicar sus hallazgos con claridad.</p>
+				<p>Soy graduada en Comunicación Audiovisual y actualmente me estoy formando en Data Science, Big Data e Inteligencia Artificial. Pasé de pensar en planos, ritmo y narrativa a preguntarme qué historia cuentan los datos. Plot twist: las dos cosas tienen mucho que decirse.</p>
+				<p>Me interesan la comunicación, el marketing digital y la creación de contenido tanto como encontrar sentido en los datos y explorar lo que puede hacer la IA. No tengo decidido exactamente dónde acabaré; sí tengo claro que quiero seguir aprendiendo. Comunicación, datos y un poco de caos. Del controlable, casi siempre.</p>
+				<p class="opportunities"><strong>¿Qué busco?</strong> Oportunidades junior, prácticas y equipos donde se crucen comunicación y marketing digital, producción audiovisual, analítica de marketing y contenidos, investigación de audiencias e insights o proyectos que incorporen IA.</p>
 			</div>
 		</section>
 
 		<section class="focus" id="enfoque" aria-labelledby="enfoque-titulo">
 			<div class="focus-inner">
-				<p class="section-label">Lo que aporto</p>
-				<h2 id="enfoque-titulo">Un enfoque, tres perspectivas</h2>
+				<p class="section-label">02 / Pestañas abiertas</p>
+				<h2 id="enfoque-titulo">Lo que me interesa</h2>
 				<div class="focus-grid">
 					<article class="focus-item">
-						<h3>Narrativa audiovisual</h3>
-						<p>Ideas y mensajes que encuentran su forma en imágenes, sonido y ritmo.</p>
+						<span class="item-number">01</span>
+						<h3>Comunicación</h3>
+						<p>Ideas con intención, contexto y una voz propia.</p>
 					</article>
 					<article class="focus-item">
-						<h3>Análisis de datos</h3>
-						<p>Lectura rigurosa de la información para revelar patrones y oportunidades.</p>
+						<span class="item-number">02</span>
+						<h3>Marketing digital</h3>
+						<p>Cómo se encuentran las marcas, las personas y sus historias.</p>
 					</article>
 					<article class="focus-item">
-						<h3>Comunicación estratégica</h3>
-						<p>Hallazgos traducidos en mensajes comprensibles, útiles y memorables.</p>
+						<span class="item-number">03</span>
+						<h3>Contenido</h3>
+						<p>Crear piezas que den ganas de mirar, escuchar o leer.</p>
 					</article>
+					<article class="focus-item">
+						<span class="item-number">04</span>
+						<h3>Datos</h3>
+						<p>Buscar patrones y entender qué hay detrás de los números.</p>
+					</article>
+					<article class="focus-item">
+						<span class="item-number">05</span>
+						<h3>Inteligencia artificial</h3>
+						<p>Explorar sus posibilidades con curiosidad y criterio.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="page process" id="proceso" aria-labelledby="proceso-titulo">
+			<div class="process-heading">
+				<div>
+					<p class="section-label">03 / Cuaderno abierto</p>
+					<h2 id="proceso-titulo">En proceso. Literalmente.</h2>
+				</div>
+				<p class="process-aside">Este espacio es para aprendizajes y proyectos reales. De momento, los huecos están vacíos a propósito.</p>
+			</div>
+			<div class="process-board">
+				<article class="process-cell">
+					<span>Aprendizaje o experimento · por añadir</span>
+					<p>[Añade aquí un aprendizaje, experimento o proyecto real.]</p>
+				</article>
+				<article class="process-cell">
+					<span>La parte que me llevo · por añadir</span>
+					<p>[Cuenta qué descubriste, qué salió raro o qué probarías después.]</p>
+				</article>
+			</div>
+			<div class="tools-block" aria-labelledby="tools-titulo">
+				<div>
+					<h3 id="tools-titulo">Herramientas y práctica</h3>
+					<p>Añade solo las herramientas que realmente manejas, tu nivel y un proyecto real que lo demuestre. Este bloque es una plantilla, no una lista de conocimientos actuales.</p>
+				</div>
+				<div class="tools-fields">
+					<p><strong>Herramientas:</strong> [Añade aquí las que manejas.]</p>
+					<p><strong>Nivel:</strong> [Indica tu nivel real.]</p>
+					<p><strong>Evidencia:</strong> [Enlaza aquí un proyecto propio.]</p>
+					<p>Ejemplos habituales en ofertas: GA4, SQL, BigQuery, Power BI y Looker Studio. No se presentan como conocimientos actuales.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact" id="contacto" aria-labelledby="contacto-titulo">
+			<div class="page contact-inner">
+				<div>
+					<p class="section-label">04 / La siguiente escena</p>
+					<h2 id="contacto-titulo">¿Hablamos?</h2>
+				</div>
+				<div>
+					<p class="contact-copy">Si te interesa la comunicación, los datos o las buenas preguntas, aquí hay sitio para una conversación.</p>
+					<a class="contact-link" href="mailto:EDITA-TU-CORREO">[Añade aquí tu correo de contacto]</a>
+					<a class="contact-link" href="#contacto">[Añade aquí un perfil o enlace profesional]</a>
 				</div>
 			</div>
 		</section>
 	</main>
 
 	<footer class="page">
-		<span>Comunicación audiovisual + análisis de datos</span>
-		<span>Perfil profesional</span>
+		<span>LATAYA · Comunicación, datos y un poco de caos.</span>
+		<a href="#inicio">Volver arriba ↑</a>
 	</footer>
+	<script>
+		const pythonToggle = document.querySelector("#python-toggle");
+		const pythonStatus = document.querySelector("#python-status");
+		const pythonNotes = [
+			"Estado: conociéndonos en lenguaje Python.",
+			"La conversación va bien. A veces aparece un traceback.",
+			"Relación en beta. Próxima actualización: otro café."
+		];
+		let pythonNoteIndex = 0;
+
+		pythonToggle.addEventListener("click", () => {
+			pythonStatus.textContent = pythonNotes[pythonNoteIndex % pythonNotes.length];
+			pythonStatus.hidden = false;
+			pythonToggle.setAttribute("aria-expanded", "true");
+			pythonNoteIndex += 1;
+		});
+	</script>
 </body>
 </html>
