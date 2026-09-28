@@ -9,14 +9,14 @@
 	<style>
 		:root {
 			color-scheme: light;
-			--paper: #fbf8ef;
-			--ink: #1b2823;
-			--muted: #53635c;
-			--line: #d8dfd2;
-			--sage: #e1edb4;
-			--sage-deep: #344f43;
-			--coral: #f2aa8d;
-			--coral-deep: #874e3e;
+			--paper: #f6f7f3;
+			--ink: #1d2926;
+			--muted: #56635f;
+			--line: #d8dfda;
+			--sage: #d7eee2;
+			--sage-deep: #294b3e;
+			--coral: #f5c5b1;
+			--coral-deep: #754334;
 			--white: #fffefa;
 			font-family: "Aptos", "Segoe UI", sans-serif;
 			font-synthesis: none;
@@ -35,6 +35,19 @@
 		}
 
 		a { color: inherit; }
+
+		.skip-link {
+			position: absolute;
+			top: 12px;
+			left: 12px;
+			z-index: 2;
+			padding: 10px 12px;
+			background: var(--ink);
+			color: var(--white);
+			transform: translateY(-160%);
+		}
+
+		.skip-link:focus { transform: translateY(0); }
 
 		.page {
 			width: min(1120px, calc(100% - 64px));
@@ -73,7 +86,11 @@
 			grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
 			align-items: center;
 			gap: 48px;
-			padding: 76px 0 88px;
+			width: min(1216px, calc(100% - 64px));
+			margin: 30px auto 88px;
+			padding: 64px 48px 68px;
+			background: var(--ink);
+			color: var(--paper);
 		}
 
 		.eyebrow, .section-label {
@@ -104,11 +121,11 @@
 			line-height: .88;
 		}
 
-		h1 span { display: block; color: var(--sage-deep); }
+		h1 span { display: block; color: var(--sage); }
 
 		.hero-prompt {
 			margin: 0 0 22px;
-			color: var(--coral-deep);
+			color: var(--coral);
 			font-family: Georgia, "Times New Roman", serif;
 			font-size: 25px;
 			font-style: italic;
@@ -117,7 +134,7 @@
 		.intro {
 			max-width: 540px;
 			margin-bottom: 32px;
-			color: var(--muted);
+			color: #d1d9d4;
 			font-size: 16px;
 			line-height: 1.8;
 		}
@@ -127,17 +144,17 @@
 			align-items: center;
 			gap: 12px;
 			padding: 13px 17px;
-			background: var(--sage-deep);
-			color: var(--white);
+			background: var(--sage);
+			color: var(--ink);
 			font-size: 14px;
 			font-weight: 600;
 			text-decoration: none;
 			transition: background .2s ease, transform .2s ease;
 		}
 
-		.text-link:hover { background: var(--ink); transform: translateY(-2px); }
+		.text-link:hover { background: var(--coral); transform: translateY(-2px); }
 		.text-link:focus-visible { outline: 3px solid var(--coral-deep); outline-offset: 3px; }
-		.text-link span { color: var(--coral); font-size: 18px; }
+		.text-link span { color: var(--ink); font-size: 18px; }
 
 		.python-note {
 			display: flex;
@@ -148,7 +165,7 @@
 			padding: 0;
 			border: 0;
 			background: transparent;
-			color: var(--muted);
+			color: #d1d9d4;
 			font: inherit;
 			font-size: 12px;
 			text-align: left;
@@ -170,7 +187,7 @@
 			display: block;
 			max-width: 360px;
 			margin-top: 10px;
-			color: var(--coral-deep);
+			color: var(--coral);
 			font-size: 12px;
 		}
 		.python-status[hidden] { display: none; }
@@ -474,7 +491,7 @@
 			line-height: 1.7;
 		}
 
-		.contact-link {
+		.contact-link, .contact-placeholder {
 			display: inline-block;
 			padding-bottom: 5px;
 			border-bottom: 1px solid var(--coral);
@@ -511,7 +528,7 @@
 			.page, .focus-inner { width: min(100% - 40px, 540px); }
 			.topbar { min-height: 70px; }
 			.nav { gap: 18px; font-size: 12px; }
-			.hero { grid-template-columns: 1fr; gap: 34px; padding: 68px 0 72px; }
+			.hero { width: min(100% - 40px, 540px); grid-template-columns: 1fr; gap: 34px; margin: 20px auto 60px; padding: 44px 24px 48px; }
 			h1 { font-size: 112px; }
 			.visual { min-height: 340px; }
 			.visual::before { bottom: 38px; left: 24px; width: 140px; height: 140px; }
@@ -552,6 +569,7 @@
 	</style>
 </head>
 <body>
+	<a class="skip-link" href="#contenido">Saltar al contenido</a>
 	<header class="page topbar">
 		<a class="monogram" href="#inicio" aria-label="LATAYA, inicio">LATAYA</a>
 		<nav class="nav" aria-label="Navegación principal">
@@ -562,7 +580,7 @@
 		</nav>
 	</header>
 
-	<main>
+		<main id="contenido">
 		<section class="page hero" id="inicio" aria-labelledby="titulo">
 			<div>
 				<p class="eyebrow">Creatividad · Comunicación · Datos · IA</p>
@@ -678,8 +696,8 @@
 				</div>
 				<div>
 					<p class="contact-copy">Si te interesa la comunicación, los datos o las buenas preguntas, aquí hay sitio para una conversación.</p>
-					<a class="contact-link" href="mailto:EDITA-TU-CORREO">[Añade aquí tu correo de contacto]</a>
-					<a class="contact-link" href="#contacto">[Añade aquí un perfil o enlace profesional]</a>
+					<span class="contact-placeholder">[Añade aquí tu correo de contacto]</span>
+					<span class="contact-placeholder">[Añade aquí un perfil o enlace profesional]</span>
 				</div>
 			</div>
 		</section>
@@ -700,6 +718,12 @@
 		let pythonNoteIndex = 0;
 
 		pythonToggle.addEventListener("click", () => {
+			if (!pythonStatus.hidden) {
+				pythonStatus.hidden = true;
+				pythonToggle.setAttribute("aria-expanded", "false");
+				return;
+			}
+
 			pythonStatus.textContent = pythonNotes[pythonNoteIndex % pythonNotes.length];
 			pythonStatus.hidden = false;
 			pythonToggle.setAttribute("aria-expanded", "true");
